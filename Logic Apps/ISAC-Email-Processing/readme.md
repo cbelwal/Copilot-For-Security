@@ -1,9 +1,9 @@
 # ISAC Email Processing with Copilot for Security
 Author: Chaitanya Belwal
 
-In this Logic App ISAC emails containing CVEs are processed by analyzing the mailbox, extracting the CVEs and using Copilot for Security the presense of those CVEs are analyzed in your environment. 
+In this Logic App, ISAC emails containing CVEs are processed by analyzing the mailbox, extracting the CVEs and using Copilot for Security, the presense of those CVEs are analyzed in your environment. 
 
-The information for CVEs detected in your environment is then enriched with data from MDTI and consolidated HTML report is then emailed to one of more specified mailbox(es).
+The information for CVEs detected in your environment is then enriched with data from MDTI and a consolidated HTML report is then emailed to one of more specified mailbox(es).
 
 This way the generic ISAC email that contains a list of CVEs is converted to an actionable email containing only the CVEs that exist in your environment. The CVE information if further enriched with relevant information from Microsoft Defender Threat Intelligence.
 
