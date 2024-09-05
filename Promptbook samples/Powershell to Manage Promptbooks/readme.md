@@ -11,6 +11,8 @@ The PowerShell script 'PromptBooksDownload.ps1' allows you to download all your 
 
 Powershell -file PromptBooksDownload.ps1 -token TokenIdWithoutBearerWord -namecontains "CVE"
 
+Powershell.exe -noprofile -executionpolicy bypass -file PromptBooksDownload.ps1
+
 The '-namecontains' parameter is optional. If specified, the script only downloads the promptbooks who's name contains the phrase specified by the '-namecontains' parameter ("CVE" in this case). Specify the phrase in double quotes.
 
 Description of the JSON format and instructions on obtaining the authorization token are given below.
