@@ -285,10 +285,10 @@
                                         },
                                         "method":  "post",
                                         "body":  {
-                                            "To":  "cbelwal@microsoft.com",
+                                            "To":  "someemail@domain.com",
                                             "Subject":  "Response from ISAC Email",
                                             "Body":  "\u003cp\u003e\u003cb\u003e\u003cstrong\u003eSessionId:\u003c/strong\u003e\u003c/b\u003e @{body('Copilot_Prompt_-_Extract_CVEs')?['sessionId']}\u003c/p\u003e\u003cbr\u003e\u003cp\u003e\u003cb\u003e\u003cstrong\u003eCVE Extraction: \u003c/strong\u003e\u003c/b\u003e@{body('Copilot_Prompt_-_Extract_CVEs')?['EvaluationResultContent']}\u003c/p\u003e\u003cbr\u003e\u003cp\u003e\u003cb\u003e\u003cstrong\u003eCVE Scan Result:\u003c/strong\u003e\u003c/b\u003e @{body('Copilot_Prompt_-_Generate_Report')?['EvaluationResultContent']}\u003c/p\u003e\u003cbr\u003e\u003cp\u003e\u003cb\u003e\u003cstrong\u003eCVE Final Report\u003c/strong\u003e\u003c/b\u003e\u003cb\u003e\u003cstrong\u003e: \u003c/strong\u003e\u003c/b\u003e@{body('Copilot_Prompt_-_HTML_Report')?['EvaluationResultContent']}\u003c/p\u003e",
-                                            "Cc":  "cbelwal@gmail.com"
+                                            "Cc":  "someemail@domain.com"
                                         },
                                         "path":  "/v2/Mail"
                                     }
