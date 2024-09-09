@@ -29,10 +29,17 @@ Authorize both of the API connections (you may need to sign-in individually for 
 
 ![alt text](LA-step-2.png)
 
-### Step 3: Enable the Logic App
+
+### Step 3: Assign Integration Account
+
+The JavaScript action requires an Integration Account to be assigned in the consumption based Logic Apps. Assign the integration account by going to 'Workflow Settings' and selecting the Integration Account. If there is no integration account, you can create one as shown in this <a href = "https://learn.microsoft.com/en-us/azure/logic-apps/enterprise-integration/create-integration-account?tabs=azure-portal%2Cconsumption">link</a>:
+
+![alt text](LA-step-3.png)
+
+### Step 4: Enable the Logic App
 
 Make sure the Logic App is enabled:
 
-![alt text](LA-step-3.png)
+![alt text](LA-step-4.png)
 
 <br>
