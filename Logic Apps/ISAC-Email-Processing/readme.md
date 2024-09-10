@@ -11,7 +11,13 @@ This way the generic ISAC email that contains a list of CVEs is converted to an 
 
 ## Deploying the Solution
 
-### Step 1: Deploy the Logic App
+### Step 1: Create an Integration Account
+
+The JavaScript action requires an Integration Account to be assigned in the consumption based Logic Apps. If you do not have an integration account, please create one as shown in this <a href = "https://learn.microsoft.com/en-us/azure/logic-apps/enterprise-integration/create-integration-account?tabs=azure-portal%2Cconsumption">link</a>:
+
+Please do not proceed further till the integration account is created, note down the name of the Integration account as it be needed in Step 2.
+
+### Step 2: Deploy the Logic App
 
 Click the button below to deploy the Logic App:
 
@@ -19,25 +25,20 @@ Click the button below to deploy the Logic App:
 <img src="https://aka.ms/deploytoazurebutton"/>
 </a>
 
-You can specify a different name for the Logic App. Make sure there are no spaces  
+You can specify a different name for the Logic App, make sure there are no spaces in name. Specify the Integration Account that you want the logic app to use, the Integration should already exist else you will get an error.
 
-### Step 2: Initialize O365 and Security Copilot API connections
+### Step 3: Initialize O365 and Security Copilot API connections
 
 Open the Logic App and click "API Connections" on the left navigation pane:
 
-![alt text](LA-step-1.png)
+![alt text](LA-step-3.png)
 
 Authorize both of the API connections  by clicking on 'Edit API Connection' under 'General' :
 
-![alt text](LA-step-2.png)
+![alt text](LA-step-3_3.png)
 
-![alt text](LA-step-2_5.png)
+![alt text](LA-step-3_5.png)
 
-### Step 3: Assign Integration Account
-
-The JavaScript action requires an Integration Account to be assigned in the consumption based Logic Apps. Assign the integration account by going to 'Workflow Settings' and selecting the Integration Account. If there is no integration account, you can create one as shown in this <a href = "https://learn.microsoft.com/en-us/azure/logic-apps/enterprise-integration/create-integration-account?tabs=azure-portal%2Cconsumption">link</a>:
-
-![alt text](LA-step-3.png)
 
 ### Step 4: Enable the Logic App
 
