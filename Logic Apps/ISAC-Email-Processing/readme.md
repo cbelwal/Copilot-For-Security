@@ -42,4 +42,8 @@ Make sure the Logic App is enabled:
 
 ![alt text](LA-step-4.png)
 
+### Step 5: Change Email addresses and Conditions
+
+Change the ISAC email receiver and report email addresses as per your environment. Also modify the conditions to detect ISAC emails as required in your environment. 
+
 <br>
