@@ -5,6 +5,10 @@
         "PlaybookName":  {
             "defaultValue":  "LA-ISAC-B",
             "type":  "string"
+        },
+        "integrationAccountName":  {
+            "defaultValue":  "LA_Integration_Account",
+            "type":  "string"
         }
     },
     "variables":  {
@@ -18,9 +22,7 @@
                 "provisioningState":  "Succeeded",
                 "state":  "Enabled",
                 "integrationAccount":  {
-                    "name":  "LA_Integration",
-                    "id":  "/subscriptions/881b7b0a-4cb2-404a-a650-09fbcb488378/resourceGroups/RG_LogicApps/providers/Microsoft.Logic/integrationAccounts/LA_Integration",
-                    "type":  "Microsoft.Logic/integrationAccounts"
+                    "id": "[resourceId('Microsoft.Logic/integrationAccounts', parameters('integrationAccountName'))]"
                 },
                 "definition":  {
                     "$schema":  "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
