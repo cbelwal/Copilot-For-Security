@@ -12,7 +12,7 @@
         }
     },
     "variables":  {
-        "Office365-1ConnectionName":  "[concat('Office365-1-', parameters('PlaybookName'))]",
+        "Office365-1ConnectionName":  "[concat('Office365-', parameters('PlaybookName'))]",
         "SecuritycopilotConnectionName":  "[concat('Securitycopilot-', parameters('PlaybookName'))]",
         "ConversionserviceConnectionName":  "[concat('Conversionservice-', parameters('PlaybookName'))]"
     },
