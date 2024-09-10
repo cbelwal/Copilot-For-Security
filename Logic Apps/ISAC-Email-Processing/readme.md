@@ -19,16 +19,19 @@ Click the button below to deploy the Logic App:
 <img src="https://aka.ms/deploytoazurebutton"/>
 </a>
 
+You can specify a different name for the Logic App. Make sure there are no spaces  
+
 ### Step 2: Initialize O365 and Security Copilot API connections
 
 Open the Logic App and click "API Connections" on the left navigation pane:
 
 ![alt text](LA-step-1.png)
 
-Authorize both of the API connections (you may need to sign-in individually for both API connections):
+Authorize both of the API connections  by clicking on 'Edit API Connection' under 'General' :
 
 ![alt text](LA-step-2.png)
 
+![alt text](LA-step-2_5.png)
 
 ### Step 3: Assign Integration Account
 
@@ -42,7 +45,7 @@ Make sure the Logic App is enabled:
 
 ![alt text](LA-step-4.png)
 
-### Step 5: Change Email addresses and Conditions
+### Step 5: Change Email addresses and conditions
 
 Change the ISAC email receiver and report email addresses as per your environment. Also modify the conditions to detect ISAC emails as required in your environment. 
 
