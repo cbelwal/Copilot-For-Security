@@ -48,6 +48,6 @@ Make sure the Logic App is enabled:
 
 ### Step 5: Change Email addresses and conditions
 
-Change the ISAC email receiver and report email addresses as per your environment. Also modify the conditions to detect ISAC emails as required in your environment. 
+Change the ISAC email receiver and report email addresses as per your environment in the Outlook trigger and output email . Also modify the conditions to detect ISAC emails as required in your environment. 
 
 <br>

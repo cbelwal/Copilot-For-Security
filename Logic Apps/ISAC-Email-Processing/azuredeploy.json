@@ -9,6 +9,14 @@
         "integrationAccountName":  {
             "defaultValue":  "LA_Integration_Account",
             "type":  "string"
+        },
+        "toReportEmail":  {
+
+            "defaultValue":  "user@domain.com",
+            "type":  "string",
+            "metadata": {
+                "description": "Specify the email address where the final report will be sent. You can more email addresses after importing the Logic App"
+            }
         }
     },
     "variables":  {
@@ -95,7 +103,8 @@
                                         "method":  "post",
                                         "body":  {
                                             "PromptContent":  "Using Defender KQL, tell me how many of the previous CVEs are present in my environment.",
-                                            "SessionId":  "@body('Copilot_Prompt_-_Extract_CVEs')?['sessionId']"
+                                            "SessionId":  "@body('Copilot_Prompt_-_Extract_CVEs')?['sessionId']",
+                                            "SkillName": "NL2KQLDefender"
                                         },
                                         "path":  "/process-prompt",
                                         "retryPolicy":  {
@@ -152,7 +161,8 @@
                                         "method":  "post",
                                         "body":  {
                                             "PromptContent":  "For only the CVEs found in my environment as done in the last step, use MDTI and show me the Affected Software, Severity, CVSS3 score, published data, summary, impact , mitigation and References for each of the CVEs above. Put each individual data point in a bulleted list under each CVE heading.",
-                                            "SessionId":  "@body('Copilot_Prompt_-_CVEs_in_my_environment')?['sessionId']"
+                                            "SessionId":  "@body('Copilot_Prompt_-_CVEs_in_my_environment')?['sessionId']",
+                                            "SkillName": "FindThreatIntelligence"
                                         },
                                         "path":  "/process-prompt"
                                     }
@@ -287,8 +297,8 @@
                                         },
                                         "method":  "post",
                                         "body":  {
-                                            "To":  "someemail@domain.com",
-                                            "Subject":  "Response from ISAC Email",
+                                            "To":  "@parameters('toReportEmail')",
+                                            "Subject":  "Response after analyzing CVEs",
                                             "Body":  "\u003cp\u003e\u003cb\u003e\u003cstrong\u003eSessionId:\u003c/strong\u003e\u003c/b\u003e @{body('Copilot_Prompt_-_Extract_CVEs')?['sessionId']}\u003c/p\u003e\u003cbr\u003e\u003cp\u003e\u003cb\u003e\u003cstrong\u003eCVE Extraction: \u003c/strong\u003e\u003c/b\u003e@{body('Copilot_Prompt_-_Extract_CVEs')?['EvaluationResultContent']}\u003c/p\u003e\u003cbr\u003e\u003cp\u003e\u003cb\u003e\u003cstrong\u003eCVE Scan Result:\u003c/strong\u003e\u003c/b\u003e @{body('Copilot_Prompt_-_Generate_Report')?['EvaluationResultContent']}\u003c/p\u003e\u003cbr\u003e\u003cp\u003e\u003cb\u003e\u003cstrong\u003eCVE Final Report\u003c/strong\u003e\u003c/b\u003e\u003cb\u003e\u003cstrong\u003e: \u003c/strong\u003e\u003c/b\u003e@{body('Copilot_Prompt_-_HTML_Report')?['EvaluationResultContent']}\u003c/p\u003e",
                                             "Cc":  "someemail@domain.com"
                                         },
@@ -348,7 +358,7 @@
                                         },
                                         "method":  "post",
                                         "body":  {
-                                            "PromptContent":  "Convert the above report to HTML format, field name should be highlighted in bold.",
+                                            "PromptContent":  "/askgpt Convert the above report to HTML format, field name should be highlighted in bold.",
                                             "SessionId":  "@body('Copilot_Prompt_-_Generate_Report')?['sessionId']"
                                         },
                                         "path":  "/process-prompt",
@@ -380,7 +390,7 @@
                                     {
                                         "contains":  [
                                             "@triggerBody()?['from']",
-                                            "cbelwal@microsoft.com"
+                                            "username@somedomain.com"
                                         ]
                                     }
                                 ]
