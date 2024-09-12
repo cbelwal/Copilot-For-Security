@@ -101,7 +101,7 @@
                                         },
                                         "method":  "post",
                                         "body":  {
-                                            "PromptContent":  "Using Defender KQL, tell me how many of the previous CVEs are present in my environment.",
+                                            "PromptContent":  "{\"DataRequest\":\"Tell me how many of the previous CVEs are present in my environment.\"",
                                             "SessionId":  "@body('Copilot_Prompt_-_Extract_CVEs')?['sessionId']",
                                             "SkillName": "NL2KQLDefender"
                                         },
@@ -160,8 +160,7 @@
                                         "method":  "post",
                                         "body":  {
                                             "PromptContent":  "For only the CVEs found in my environment as done in the last step, use MDTI and show me the Affected Software, Severity, CVSS3 score, published data, summary, impact , mitigation and References for each of the CVEs above. Put each individual data point in a bulleted list under each CVE heading.",
-                                            "SessionId":  "@body('Copilot_Prompt_-_CVEs_in_my_environment')?['sessionId']",
-                                            "SkillName": "FindThreatIntelligence"
+                                            "SessionId":  "@body('Copilot_Prompt_-_CVEs_in_my_environment')?['sessionId']"
                                         },
                                         "path":  "/process-prompt"
                                     }
